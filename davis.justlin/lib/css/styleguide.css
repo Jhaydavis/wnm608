@@ -1,0 +1,156 @@
+/* CSS RESET */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-neutral-light: #eee;
+  --color-neutral-medium: #999;
+  --color-neutral-dark: #2e3136;
+  --color-black: #000;
+  --color-white: #fff;
+
+  --header-height: 3rem;
+  --spacing: 1rem;
+}
+
+body {
+  margin: 0;
+  font-size: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2 {
+  font-family: good-times, sans-serif;
+
+  font-weight: 400;
+
+  font-style: normal;
+}
+h3,
+h4 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LAYOUT CLASSES */
+
+.container {
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.display-flex {
+  display: flex;
+}
+.display-inline-flex {
+  display: inline-flex;
+}
+.display-inline-flex-promo {
+  display: inline-flex;
+  width: 100%;
+}
+
+.display-block {
+  display: block;
+}
+.display-inline-block {
+  display: inline-block;
+}
+
+.flex-stretch {
+  flex: 1 1 auto;
+}
+.flex-none {
+  flex: none;
+}
+.flex-align-center {
+  align-items: center;
+}
+
+/* COMPONENT CLASSES */
+
+.article-body {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.nav ul {
+  display: inline-flex;
+  list-style: none;
+  margin-top: 0%;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+.navbar {
+  background-color: var(--color-neutral-dark);
+  color: var(--color-white);
+  line-height: var(--header-height);
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.navbar h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.navbar p {
+  margin-top: 1px;
+}
+
+.navbar a {
+  padding: 0 1em;
+}
+
+.card {
+  background-color: lightgray;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.55);
+  border-radius: 20px;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 33%;
+}
+
+.view-window {
+  height: 200px;
+  background-color: lightsteelblue;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #2e3136;
+  color: silver;
+  height: 30px;
+  padding-top: 10px;
+  padding-left: 80%;
+
+  font-family: MuseoModerno;
+  font-size: 10px;
+}
