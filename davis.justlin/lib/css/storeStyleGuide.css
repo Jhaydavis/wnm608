@@ -16,7 +16,7 @@ body {
     "footer footer footer";
 
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 160px 1fr 50px;
+  grid-template-rows: 155px 1fr 50px;
 }
 
 header,
@@ -30,8 +30,9 @@ main {
 }
 
 header {
-  grid-area: header;
+  display: inline-flex;
 
+  grid-area: header;
   height: 150px;
 
   background: linear-gradient(
@@ -44,7 +45,6 @@ header {
 }
 
 img {
-  padding: 20px;
   max-width: 200px;
 }
 
@@ -116,6 +116,10 @@ hr {
 h1 {
   font-size: 20pt;
   line-height: 30pt;
+}
+
+.branding {
+  padding: 10px;
 }
 
 h2 {
