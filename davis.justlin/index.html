@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="lib/css/styleguide.css" />
+    <link rel="stylesheet" href="lib/css/gridSystem.css" />
     <link rel="stylesheet" href="css/storetheme.css" />
     <link rel="stylesheet" href="https://use.typekit.net/ilv2uut.css" />
     <title>Performance Cars Paintings and Posters</title>
@@ -17,7 +19,6 @@
           <p>Paintings and Posters for the Car Enthusiast</p>
         </div>
 
-        <div class="flex-stretch"></div>
         <nav class="flex-none nav">
           <ul class="container display-flex">
             <li class="flex-stretch"><a href="#article1">American Cars</a></li>
@@ -28,7 +29,40 @@
         </nav>
       </div>
     </header>
+    <div class="container">
+      <div class="card-lg">
+        <h2>Non-Responsive Grid</h2>
+        <div class="grid">
+          <div class="col-6">col-6</div>
+          <div class="col-3">col-3</div>
+          <div class="col-3">col-3</div>
 
+          <div class="col-4">col-4</div>
+          <div class="col-4">col-4</div>
+          <div class="col-4">col-4</div>
+
+          <div class="col-3">col-3</div>
+          <div class="col-3">col-3</div>
+          <div class="col-3">col-3</div>
+          <div class="col-3">col-3</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="card-lg">
+        <h2>Responsive Grid</h2>
+        <div class="grid">
+          <div class="col-xs-12 col-md-4">col 12xs and 4md</div>
+          <div class="col-xs-12 col-md-4">col 12xs and 4md</div>
+          <div class="col-xs-12 col-md-4">col 12xs and 4md</div>
+
+          <div class="col-xs-6 col-lg-2">col 6xs and 2lg</div>
+          <div class="col-xs-6 col-lg-2">col 6xs and 2lg</div>
+          <div class="col-xs-6 col-lg-2">col 6xs and 2lg</div>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="view-window" style="background-image: url(img/car1.JPG)">
         <p></p>
@@ -36,9 +70,9 @@
       <div class="display-inline-flex-promo">
         <article id="article1" class="card">
           <h2>POPULAR PAINTINGS</h2>
-          <h3>Top 5 Paintings</h3>
+          <h3>Top Paintings</h3>
           <div class="article-body">
-            <ul>
+            <ul class="li-card">
               <li>Ferrari</li>
               <li>Porsche</li>
               <li>Lamborghini</li>
@@ -51,9 +85,9 @@
         <article id="article2" class="card">
           <h2>POPULAR POSTERS</h2>
 
-          <h3>Top 5 Posters</h3>
+          <h3>Top Posters</h3>
           <div class="article-body">
-            <ul>
+            <ul class="li-card">
               <li>Ferrari</li>
               <li>Porsche</li>
               <li>Lamborghini</li>
@@ -64,11 +98,11 @@
         </article>
 
         <article id="article2" class="card">
-          <h2>POPULAR WALLPAPERS</h2>
+          <h2>POPULAR WALLPAPER</h2>
 
-          <h3>Top 5 Wallpapers</h3>
+          <h3>Top Wallpapers</h3>
           <div class="article-body">
-            <ul>
+            <ul class="li-card">
               <li>Ferrari</li>
               <li>Porsche</li>
               <li>Lamborghini</li>
@@ -95,12 +129,28 @@
           accusamus similique quod minima non illo exercitationem. Velit nostrum
           voluptates pariatur molestiae quam.
         </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-          incidunt esse, provident fugiat blanditiis ad sapiente quibusdam
-          accusamus similique quod minima non illo exercitationem. Velit nostrum
-          voluptates pariatur molestiae quam.
-        </p>
+      </div>
+
+      <div class="container">
+        <div class="grid">
+          <div class="col-xs-12 col-lg-6">
+            <div class="card">
+              <img src="img/art1.jpg" class="media-image" alt="" />
+            </div>
+
+            <div class="card">
+              <img src="img/art2.jpg" class="media-image" alt="" />
+            </div>
+
+            <div class="card">
+              <img src="img/art3.jpg" class="media-image" alt="" />
+            </div>
+
+            <div class="card">
+              <img src="img/art4.jpg" class="media-image" alt="" />
+            </div>
+          </div>
+        </div>
       </div>
       <div class="footer">&copy Copyright Jhay Davis 2022</div>
     </div>
