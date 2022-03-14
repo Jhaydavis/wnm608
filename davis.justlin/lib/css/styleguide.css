@@ -45,9 +45,9 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+/* a:hover {
   text-decoration: underline;
-}
+} */
 
 /* LAYOUT CLASSES */
 
@@ -115,8 +115,17 @@ li {
   list-style: none;
   margin-top: 0%;
   margin-bottom: 0;
-  padding-left: 0;
+  padding-left: 1em;
   padding-right: 10px;
+}
+
+.nav a {
+  display: inline-flex;
+  padding: 0.2em 0.5em;
+}
+
+.nav a:hover {
+  background-color: rgb(71, 69, 82);
 }
 
 .navbar {
@@ -137,7 +146,7 @@ li {
 }
 
 .navbar a {
-  padding: 0 1em;
+  padding: 0.1em 2em;
 }
 
 .card {

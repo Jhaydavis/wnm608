@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://use.typekit.net/ilv2uut.css" />
     <link rel="stylesheet" href="../lib/css/storeStyleGuide.css" />
+     <!-- <link rel="stylesheet" href="../lib/css/styleguide.css"> -->
     <title>Style Guide</title>
   </head>
   <body>
@@ -26,11 +27,17 @@
     <nav>
       <h2>CONTENTS</h2>
       <ul>
-        <li><a href="#Brand"></a>Brand Elements</li>
-        <li><a href="#Typography"></a>Typography</li>
-        <li><a href="#Colors"></a>Color Pallet</li>
-        <li><a href="#Navigation"></a>Navigation</li>
-        <li><a href="#Cards"></a>Cards</li>
+        <li><a href="#Brand">Brand Elements</a></li>
+        <li><a href="#Typography">Typography</a></li>
+        <li><a href="#Colors">Color Pallet</a></li>
+        <li><a href="#Navigation">Navigation</a></li>
+        <li><a href="#Cards">Cards</a></li>
+        <li><a href="#Tables">Tables</a></li>
+        <li><a href="#Figures">Figures</a></li>
+        <li><a href="#Forms">Forms</a></li>
+        <ul>
+          <li><a href="#inputs">Inputs</a></li>
+        </ul>
       </ul>
     </nav>
 
@@ -39,8 +46,11 @@
         <h1>Brand Elements</h1>
         <hr />
         <h2>Logo</h2>
-        <p>Car Enthusiast Art Light Logo</p>
+        <div class="div-flex">
+        
+        
         <div class="branding">
+          <p>Car Enthusiast Art Light Logo</p>
           <img
             src="../img/cea-logo-white.png"
             id="brands"
@@ -48,28 +58,15 @@
           />
         </div>
         <br />
-        <p>Car Enthusiast Art Dark Logo</p>
+        
         <div class="branding">
+          <p>Car Enthusiast Art Dark Logo</p>
           <img src="../img/cea-logo-black.png" alt="Car Enthusiast Logo Dark" />
         </div>
         <br />
-        <h2>Wordmark</h2>
-        <p>Car Enthusiast Art Light Wordmark</p>
-        <div class="branding">
-          <img
-            src="../img/cea-logo-wordmark-white.png"
-            alt="Car Enthusiast Wordmark White"
-          />
-        </div>
-        <br />
-        <p>Car Enthusiast Art Light Wordmark</p>
-        <div class="branding">
-          <img
-            src="../img/cea-logo-wordmark-dark.png"
-            alt="Car Enthusiast Wordmark Dark"
-          />
-        </div>
-        <br />
+        
+        
+      </div>
       </div>
 
       <div class="card" id="Typography">
@@ -147,12 +144,49 @@
       </div>
 
       <div class="card" id="Navigation">
+
+        <script>
+          const makeNav = (classes='') => {
+            const links = ['home', 'store', 'about', 'contact'];
+            let ran = Math.floor(Math.random()*links.lenght);
+            document.write(`
+            <div> 
+              <nav class="${classes}">
+          <ul>
+            ${links.reduce((r,o,i)=>{
+              return r+ `<li class="${ran==i?'active':''}"><a heref="#">${o}</a></li>`;
+            },'')}
+          </ul>
+        </nav>
+
+            </div>
+            `);
+          }
+        </script>
         <h1>Navigation</h1>
         <hr />
-        <h2>Buttons</h2>
-        <button class="button1">Button Style 1</button>
-        <button class="button2">Button Style 2</button>
-        <button class="button3">Button Style 3</button>
+       
+
+        <h2>Basic Nav</h2>
+       <script>makeNav('nav')</script>
+
+        <h2>Nav Flex</h2>
+        <script>makeNav('nav-flex')</script>
+
+        <h2>Nav Stretch</h2>
+        <script>makeNav('nav-stretch')</script>
+
+        <h2>Nav Pills</h2>
+        <script>makeNav('nav-pills')</script>
+      
+
+        <h2>Crumbs Navigation</h2>
+        <script>makeNav('nav-crumbs')</script>
+
+
+        <h2>Material Navigation</h2>
+        <script>makeNav('nav-material')</script>
+
       </div>
 
       <div class="card" id="Cards">
@@ -183,6 +217,210 @@
             iste atque vitae quasi animi libero sit corrupti repudiandae
             facilis!
           </p>
+        </div>
+      </div>
+
+      <div class="card" id="Tables">
+        <h1>Tables</h1>
+        <hr />
+        <div class="card-dark-soft">
+          <h2>Table-Basic</h2>
+          
+
+        <div class="card">
+          <h2>Table-Basic</h2>
+
+          <table class="table">
+            <tr>
+              <th>Item Type</th>
+              <th>Item Name</th>
+              <th>Item Size</th>
+              <th>Item Price</th>
+            </tr>
+            <tr>
+              <td>Painting</td>
+              <td>The GT4</td>
+              <td>24x36</td>
+              <td>$399</td>
+            </tr>
+            <tr>
+              <td>Poster</td>
+              <td>The 911</td>
+              <td>24x48</td>
+              <td>$599</td>
+            </tr>
+
+            <tr>
+              <td>Wallpaper</td>
+              <td>The GTI</td>
+              <td>4K</td>
+              <td>$99</td>
+            </tr>
+          </table>
+        </div>
+        <h2>Table-Alt</h2>
+        <div class="card">
+          <h2>Table-Alt</h2>
+
+          <table class="table-alt">
+            <tr>
+              <th>Item Type</th>
+              <th>Item Name</th>
+              <th>Item Size</th>
+              <th>Item Price</th>
+            </tr>
+            <tr>
+              <td>Painting</td>
+              <td>The GT4</td>
+              <td>24x36</td>
+              <td>$399</td>
+            </tr>
+            <tr>
+              <td>Poster</td>
+              <td>The 911</td>
+              <td>24x48</td>
+              <td>$599</td>
+            </tr>
+
+            <tr>
+              <td>Wallpaper</td>
+              <td>The GTI</td>
+              <td>4K</td>
+              <td>$99</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" id="Figures">
+        <h1>Figures</h1>
+        <hr />
+        <div class="card-hard">
+          <h2>Headline Text Copy</h2>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt unde iste atque vitae quasi animi libero sit corrupti repudiandae facilis!</p>
+          <figure>
+            <img src="../img/car1.jpg" alt="Car Enthusiast Art">
+            <figcaption>Some descriptive text goes here</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="card" id="Forms">
+        <h1>Forms</h1>
+        <hr />
+        <div class="card-hard">
+          <h2>Inputs</h2>
+          <div class="card">
+            <h3>Default Inputs</h3>
+            <form>
+              <input type="text"><br>
+              <input type="number"><br>
+              <input type="password"><br>
+              <input type="url"><br>
+              <input type="datetime-local"><br>
+              <input type="date"><br>
+              <input type="search"><br>
+            </form>
+              <hr>
+
+              <h3>Form Input</h3>
+              <form>
+                <input type="text" class="form-input" placeholder="text">
+                <input type="number" class="form-input" placeholder="number">
+                <input type="password" class="form-input" placeholder="password">
+                <input type="url" class="form-input" placeholder="url">
+                <input type="datetime-local" class="form-input" placeholder="date-time">
+                <input type="date" class="form-input" placeholder="date">
+                <input type="search" class="form-input" placeholder="search">
+                </form>
+                <hr>
+                <h3>Form Label</h3>
+                <form>
+                  <label class="form-label">Text</label>
+                  <input type="text" class="form-input" placeholder="text">
+                  <label class="form-label">Number</label>
+                  <input type="number" class="form-input" placeholder="number">
+                  <label class="form-label">Password</label>
+                  <input type="password" class="form-input" placeholder="password">
+                  <label class="form-label">URL</label>
+                  <input type="url" class="form-input" placeholder="url">
+                  <label class="form-label">Date/Time</label>
+                  <input type="datetime-local" class="form-input" 
+                  placeholder="date-time">
+                  <label class="form-label">Date</label>
+                  <input type="date" class="form-input" placeholder="date">
+                  <label class="form-label">Search</label>
+                  <input type="search" class="form-input" placeholder="search">
+              </form>
+<hr>
+              <h3>Form Control</h3>
+              <form>
+                <label class="form-control-label">Text</label>
+                <input type="text" class="form-input" placeholder="text">
+                <label class="form-control-label">Number</label>
+                <input type="number" class="form-input" placeholder="number">
+                <label class="form-control-label">Password</label>
+                <input type="password" class="form-input" placeholder="password">
+                <label class="form-control-label">URL</label>
+                <input type="url" class="form-input" placeholder="url">
+                <label class="form-control-label">Date/Time</label>
+                <input type="datetime-local" class="form-input" 
+                placeholder="date-time">
+                <label class="form-control-label">Date</label>
+                <input type="date" class="form-input" placeholder="date">
+                <label class="form-control-label">Search</label>
+                <input type="search" class="form-input" placeholder="search">
+            </form>
+            <hr>
+            <h2>Buttons</h2>
+            <button class="button1">Button Style 1</button>
+            <button class="button2">Button Style 2</button>
+            <button class="button3">Button Style 3</button>
+
+            <hr>
+            <h2>Hot Dog</h2>
+            
+             
+              <form class="hotdog">
+               
+                <input type="search" placeholder="= Search">
+              </form>
+            
+              <hr>
+            <h2>Select </h2>
+            
+            <select class="form-select">
+              <option>Acura</option>
+              <option>BMW</option>
+              <option>Ferrari</option>
+            </select>
+            <hr>
+              <h2>Checkbox </h2>
+            
+              <form class="form-control">
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Acura">
+                <label for="vehicle1"> I have a Japanese Car</label><br>
+                <input type="checkbox" id="vehicle2" name="vehicle2" value="BMW">
+                <label for="vehicle2"> I have a German car</label><br>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Ferrari">
+                <label for="vehicle3"> I have an Itilian car</label><br><br>
+                <input type="submit" value="Send">
+              </form>
+
+              <hr>
+              <h2>Toggle </h2>
+                              
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+
+
+              
+        
+        
+          </div>
+          
         </div>
       </div>
     </main>
