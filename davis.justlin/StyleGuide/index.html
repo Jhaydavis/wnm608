@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/ilv2uut.css" />
     <link rel="stylesheet" href="../lib/css/storeStyleGuide.css" />
      <!-- <link rel="stylesheet" href="../lib/css/styleguide.css"> -->
-    <title>Style Guide</title>
+    <title>Car Enthusiast Art Site Style Guide</title>
   </head>
   <body>
     <header>
@@ -36,7 +36,7 @@
         <li><a href="#Figures">Figures</a></li>
         <li><a href="#Forms">Forms</a></li>
         <ul>
-          <li><a href="#inputs">Inputs</a></li>
+          <li><a href="#Forms">Inputs</a></li>
         </ul>
       </ul>
     </nav>
@@ -46,11 +46,12 @@
         <h1>Brand Elements</h1>
         <hr />
         <h2>Logo</h2>
+        <p class="alertSimple">Logo options for dark or light backgrounds.</p>
         <div class="div-flex">
         
         
         <div class="branding">
-          <p>Car Enthusiast Art Light Logo</p>
+          <h3>Car Enthusiast Art Light Logo</h3>
           <img
             src="../img/cea-logo-white.png"
             id="brands"
@@ -60,7 +61,7 @@
         <br />
         
         <div class="branding">
-          <p>Car Enthusiast Art Dark Logo</p>
+          <h3>Car Enthusiast Art Dark Logo</h3>
           <img src="../img/cea-logo-black.png" alt="Car Enthusiast Logo Dark" />
         </div>
         <br />
@@ -122,24 +123,33 @@
       <div class="card" id="Colors">
         <h1>Color Pallet</h1>
         <hr />
-        <div id="color1">
-          <h3>#DA1F07</h3>
-        </div>
-
+        <p class="alertSimple">NOTE: The color pallet is divided into Group One and Group Two. While colors may be mixed across pallets, the intent is to combine elements within the respective groups where possible.
+          <br>
+        </p>
+      
+        <h3>Group One</h3>
         <div id="color2">
-          <h3>#FFE200</h3>
-        </div>
-
-        <div id="color3">
-          <h3>#C27B32</h3>
-        </div>
+          <h3>#f3dc5c</h3>
+        </div>    
 
         <div id="color4">
-          <h3>#CC6022</h3>
+          <h3>#cc6022</h3>
+        </div>
+
+        <div id="color1">
+          <h3>#8f0d04</h3>
+        </div>
+        <h3>Group Two</h3>
+        <div id="color3">
+          <h3>#b5a89c</h3>
         </div>
 
         <div id="color5">
-          <h3>#D6CECE</h3>
+          <h3>#79869e</h3>
+        </div>
+
+        <div id="color6">
+          <h3>#000000</h3>
         </div>
       </div>
 
@@ -192,6 +202,18 @@
       <div class="card" id="Cards">
         <h1>Cards</h1>
         <hr />
+
+        <h2>Product Card</h2>
+
+      <div class="productCard">
+            <img src="../img/art2.jpg" class="productImage" alt="Car Art">
+            <h2>Framed GT4 Poster</h2>
+            <p class="productPrice">$99.99</p>
+            <p>Some text about the GT4. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt undeiste atque vitae quasi animi libero sit corrupti repudiandae facilis!</p>
+            <hr>
+            <button class="productButton">Add to Cart</button>
+
+      </div>
         <div class="card-dark-soft">
           <h2>Soft Shadow Dark Card</h2>
           <p>
@@ -290,6 +312,42 @@
             </tr>
           </table>
         </div>
+
+        <h2>Table-Borders</h2>
+        <div class="card">
+          <h2>Table-Borders</h2>
+
+          <table class="table-borders">
+            <tr>
+              <th>Item Type</th>
+              <th>Item Name</th>
+              <th>Item Size</th>
+              <th>Item Price</th>
+            </tr>
+            <tr>
+              <td>Painting</td>
+              <td>GT4</td>
+              <td>24x36</td>
+              <td>$399</td>
+            </tr>
+            <tr>
+              <td>Poster</td>
+              <td>Carrera</td>
+              <td>24x48</td>
+              <td>$599</td>
+            </tr>
+
+            <tr>
+              <td>Wallpaper</td>
+              <td>GTI</td>
+              <td>4K</td>
+              <td>$99</td>
+            </tr>
+          </table>
+
+         
+        </div>
+
       </div>
 
       <div class="card" id="Figures">
@@ -297,10 +355,13 @@
         <hr />
         <div class="card-hard">
           <h2>Headline Text Copy</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt unde iste atque vitae quasi animi libero sit corrupti repudiandae facilis!</p>
+          <p>Figure images should utilize the following border radius settings: border-radius: 20px.  This is specified in the the "FIGURE IMG" class.</p>
           <figure>
             <img src="../img/car1.jpg" alt="Car Enthusiast Art">
-            <figcaption>Some descriptive text goes here</figcaption>
+            <figcaption>Figure Caption specifications are captured under the FIGURE class and are: <br>figure {
+              font-style: italic;
+              padding: 20px;
+            }</figcaption>
           </figure>
         </div>
       </div>
@@ -378,6 +439,21 @@
             <button class="button3">Button Style 3</button>
 
             <hr>
+            <h2>Alerts</h2>
+            <p>"Important" alerts are to be used as notices for page events that require immediate user attention or correction.</p>
+           
+            <div class="alertMsg">
+              <span class="alertClose" >&times;</span>
+              Important Alert Box.
+            </div>
+            <p>"Simnple Message" alerts may be used for confirmations and other notices which do not require an action by the user.</p>
+            <div class="alertSimple">
+              
+              <span class="alertClose" >&times;</span>
+              Simple Message Box.
+            </div>
+
+            <hr>
             <h2>Hot Dog</h2>
             
              
@@ -398,13 +474,13 @@
               <h2>Checkbox </h2>
             
               <form class="form-control">
-                <input type="checkbox" id="vehicle1" name="vehicle1" value="Acura">
+                <input type="checkbox" class="cb1" id="vehicle1" name="vehicle1" value="Acura">
                 <label for="vehicle1"> I have a Japanese Car</label><br>
-                <input type="checkbox" id="vehicle2" name="vehicle2" value="BMW">
+                <input type="checkbox" class="cb1" id="vehicle2" name="vehicle2" value="BMW">
                 <label for="vehicle2"> I have a German car</label><br>
-                <input type="checkbox" id="vehicle3" name="vehicle3" value="Ferrari">
+                <input type="checkbox" class="cb1" id="vehicle3" name="vehicle3" value="Ferrari">
                 <label for="vehicle3"> I have an Itilian car</label><br><br>
-                <input type="submit" value="Send">
+               
               </form>
 
               <hr>

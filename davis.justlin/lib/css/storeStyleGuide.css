@@ -9,6 +9,7 @@ body {
   font-size: 16ox;
   height: 100vh;
   display: grid;
+  background-color: #000000;
 
   grid-template-areas:
     "header header header"
@@ -186,7 +187,7 @@ hr {
 .card-dark-soft {
   text-align: left;
   color: rgb(231, 227, 227);
-  background-color: rgb(49, 48, 48);
+  background-color: #313030;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.55);
   border-radius: 10px;
   padding-left: 2em;
@@ -212,6 +213,51 @@ hr {
   margin-bottom: 30px;
   position: relative;
   content: inherit;
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  max-width: 250px;
+  margin: auto;
+  text-align: center;
+  font-family: eurostile;
+  padding: 1.5em;
+  border-radius: 0.5em;
+  border: #565863 1px solid;
+  background-color: #a6a7aa;
+}
+
+.productImage {
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.productPrice {
+  color: #f2f4f7;
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.productButton {
+  color: #fff;
+  border-radius: 1em;
+  padding: 0.5em;
+  margin-top: 15px;
+  background-color: #79869e;
+  text-align: center;
+  cursor: pointer;
+  width: fit-content;
+  align-self: center;
+  font-family: eurostile;
+  font-size: 1em;
+  font-weight: 100;
+}
+
+.productButton:hover {
+  color: #000;
+  background-color: #fff;
 }
 
 h1 {
@@ -252,15 +298,16 @@ li {
 }
 
 #color1 {
-  background-color: #da1f07;
+  background-color: #8f0d04;
   text-align: center;
   max-width: 200px;
   border-radius: 10px;
   margin-bottom: 5px;
   border-style: groove;
+  color: #fff;
 }
 #color2 {
-  background-color: #ffe200;
+  background-color: #f3dc5c;
   text-align: center;
   max-width: 200px;
   border-radius: 10px;
@@ -268,7 +315,7 @@ li {
   border-style: groove;
 }
 #color3 {
-  background-color: #c27b32;
+  background-color: #b5a89c;
   text-align: center;
   max-width: 200px;
   border-radius: 10px;
@@ -284,12 +331,57 @@ li {
   border-style: groove;
 }
 #color5 {
-  background-color: #d6cece;
+  background-color: #79869e;
   text-align: center;
   max-width: 200px;
   border-radius: 10px;
   margin-bottom: 5px;
   border-style: groove;
+}
+
+#color6 {
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  max-width: 200px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  border-style: groove;
+}
+
+.alertMsg {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+  padding: 20px;
+  border-radius: 0.5em;
+  background-color: #8f0d04;
+  margin-bottom: 15px;
+}
+
+.alertSimple {
+  color: #fcf7f7;
+  font-size: 1.2em;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  padding: 20px;
+  border-radius: 0.5em;
+  background-color: #79869e;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.55);
+}
+
+.alertClose {
+  margin-left: 20px;
+  color: white;
+  font-weight: 200;
+  float: right;
+  font-size: 19px;
+  line-height: 23px;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 button {
@@ -301,38 +393,41 @@ button {
 }
 
 .button1 {
+  color: #fff;
   border-radius: 20px;
   padding: 10px;
-  background-color: #d6cece;
+  background-color: #7d7d88;
   margin-bottom: 10px;
 }
 
 .button1:hover {
+  color: #000;
   background-color: #eee7e7;
 }
 
 .button2 {
   border-radius: 10px;
   padding: 10px;
-  background-color: #f0e9e9;
+  background-color: #b5a89c;
   margin-bottom: 10px;
 }
 
 .button2:hover {
-  background-color: #afa7a7;
+  color: #000;
+  background-color: #eee7e7;
 }
 
 .button3 {
   border-radius: 5px;
   padding: 10px;
-  background-color: #3f3d3d;
+  background-color: #000;
   color: lightgray;
   margin-bottom: 10px;
 }
 
 .button3:hover {
-  background-color: #a3a6b8;
   color: #000;
+  background-color: #eee7e7;
 }
 
 .table {
@@ -350,6 +445,26 @@ table tr {
 
 .table-alt tr:nth-child(even) {
   background-color: #f3f5f8;
+}
+
+.table-borders tr:hover {
+  background-color: #faf4f4;
+}
+.table-borders {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.table-borders td {
+  border: 1px solid #000;
+  padding-left: 1em;
+  text-align: center;
+}
+
+.table-borders th {
+  border: 1px solid #000;
+  padding-left: 1em;
+  text-align: center;
 }
 
 figure {
@@ -430,6 +545,12 @@ figure img {
   font-size: 1.25rem;
   cursor: pointer;
   line-height: 1.1;
+}
+
+.cb1 {
+  margin-left: 2em;
+  margin-right: 1em;
+  margin-bottom: 1em;
 }
 
 .switch {
