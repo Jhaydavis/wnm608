@@ -1,0 +1,1 @@
+<div class="footer">Car Enthusiast Art &copy2022 All Rights Reserved.</div>
