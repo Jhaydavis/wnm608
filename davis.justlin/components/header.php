@@ -10,6 +10,7 @@
                 <li><a href="cart.php">Cart</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="adminLogin.php">Admin</a></li>
+                <li><a href="admin/users.php">Users</a></li>
             </ul>
         </div>
     </div>

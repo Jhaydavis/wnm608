@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Jhay Davis",
+        "type": "Student",
+        "email": "jhaydavis@mac.com",
+        "classes":[605, 608, 617]
+    },
+    {
+        "name": "Tony Mavis",
+        "type": "Teacher",
+        "email": "tomymavis@mac.com",
+        "classes":[605, 608, 617]
+    },
+    {
+        "name": "El Barge",
+        "type": "Advisor",
+        "email": "ebarge@mac.com",
+        "classes":[605, 608, 617]
+    }
+]

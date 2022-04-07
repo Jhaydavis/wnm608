@@ -145,6 +145,18 @@ ul {
   margin: 10px;
 }
 
+.card {
+  display: block;
+  flex: wrap;
+  margin-right: 15px;
+  font-family: eurostile;
+  padding: 1.5em;
+  border-radius: 0.5em;
+  border: #565863 1px solid;
+  background-color: rgba(68, 67, 67, 0.5);
+  /*  box-shadow: 3px -3px 29px  #2B1111; */
+}
+
 .productCard {
   display: block;
   flex: wrap;
