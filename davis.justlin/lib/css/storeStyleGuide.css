@@ -439,10 +439,11 @@ figure img {
   color: #565863;
   background-color: gainsboro;
   width: auto;
-  display: block;
-  padding-bottom: 0.3em;
+  display: flex;
+  padding-bottom: 1em;
   padding-top: 1em;
-  border-radius: 2em;
+  border-radius: .5em;
+  
 }
 
 .form-control-label {

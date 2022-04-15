@@ -295,29 +295,59 @@ table tr {
   text-align: center;
 }
 
-.form-control {
-  color: #565863;
-  background-color: gainsboro;
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  background-color: #ebecf3;
+  border-width: 0;
+  padding-left: 1em;
+  margin-bottom: 0.5em;
+  margin-left: 2em;
+  font: inherit;
   width: auto;
-  display: block;
+}
+.form-control {
+  color: #f7f7fc;
+  background-color: rgb(61, 38, 38);
+  width: auto;
+  display: flex;
+  flex-direction: column;
   padding-bottom: 0.3em;
   padding-top: 1em;
-  border-radius: 2em;
+  padding-left: 3em;
+  border-radius: .3em;
+  margin-bottom: 10px;
+  margin-right: auto;
 }
 
 .form-control-label {
   font-variant: small-caps;
-  display: block;
-  padding-bottom: 0.3em;
+  flex-direction: column;
+  
+  padding-bottom: 2em;
   padding-top: 1em;
-  width: 50%;
-  border-radius: 2em;
+  width: auto;
+  border-radius: .3em;
+  
 }
 
 .form-item {
   display: inline-block;
   padding: 0.5em 1em;
   width: 20em;
+}
+
+.form-button {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f0e9e9;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+.form-button:hover {
+  background-color: #afa7a7;
 }
 
 .buttonPurchase,
