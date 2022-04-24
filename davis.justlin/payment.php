@@ -39,7 +39,7 @@
 				<label class="form-control-label">Expiration Date</label>
 				<input type="text" class="form-input" id="exp-date" placeholder="DD/YY">
 				<hr>
-				<button class="buttonPurchase">Purchase</button>
+				<button class="productButton"><a href="confirmation.php">Purchase</a></button>
 
 			</form>
 

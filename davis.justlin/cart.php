@@ -2,80 +2,78 @@
 <html>
 
 <head>
-	<!-- BEGIN PHP Include for Meta Content -->
-	<?php include "components/meta.php"; ?>
-	<!-- END PHP Include for Meta Content -->
+    <!-- BEGIN PHP Include for Meta Content -->
+    <?php include "components/meta.php"; ?>
+    <!-- END PHP Include for Meta Content -->
 
-	<title>Car Enthusiast Art - Cart</title>
+    <title>Car Enthusiast Art - Cart</title>
 
 </head>
 
 <body>
-	<div class="main">
-		<!-- BEGIN PHP Include for Header/Nav Element -->
-		<?php include "components/header.php"; ?>
-		<!-- END PHP Include for Header/Nav Element -->
+    <div class="main">
+        <!-- BEGIN PHP Include for Header/Nav Element -->
+        <?php include "components/header.php"; ?>
+        <!-- END PHP Include for Header/Nav Element -->
 
 
-		<div class="siteInfo">
-			<h3>Your Shopping Cart</h3>
+        <div class="siteInfo">
+            <h3>Your Shopping Cart</h3>
 
 
-		</div>
+        </div>
 
 
-		<div class="storeContainerPaintings">
+        <div class="card">
 
-			<div class="productCartItem">
-				<img src="img/art1.jpg" class="productImage" alt="Car Art">
-				<h3>Framed GT4 Poster</h3>
-				<p class="productPrice">$99.99</p>
-				<button class="productButton">Remove</button>
-			</div>
+            <?php
 
-			<div class="cartItem">
-				<table class="cartSummary">
-					<tr>
-						<th>Item</th>
-						<th>Quantity</th>
-						<th>Price Each</th>
-						<th>Item Total</th>
+            include_once "components/functions.php";
+            include_once "components/templates-cart.php";
+            //$product = makeQuery(makeConn(), "SELECT *  FROM `products` WHERE `id`=" . $_GET['id']);
+            //echo '<div class="storeItemFlex">', array_reduce($product, 'productListTemplate'), '</div>';
+            $cart = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `id` IN(2,4,6)");
+            ?>
 
-					</tr>
+            <div class="storeItemFlex">
 
-					<tr>
-						<td class="productName">Name</td>
-						<td class="productQty">2</td>
-						<td class="priceEach">99</td>
-						<td class="itemTotal">198</td>
+                <?= array_reduce($cart, 'cartListTemplate') ?>
+            </div>
+            <div class="productDetail">
+                <h2>Cart Total</h2>
+                <div class="card">
+                    <h3>Sub Total</h3>
+                    <p>&dollar;199.00</p>
 
+                    <h3>Taxes</h3>
+                    <p>&dollar;19.00</p>
 
-					</tr>
+                    <h3>Total</h3>
+                    <p>&dollar;118.00</p>
+                </div>
 
-					<tr>
-						<td class="productName">Name</td>
-						<td class="productQty">2</td>
-						<td class="priceEach">99</td>
-						<td class="itemTotal">198</td>
+                <div class="cartItem">
 
+                    <button class="productButton"><a href="payment.php?">Go to Payment</a></button>
 
-					</tr>
+                </div>
 
-
-				</table>
-				<button class="buttonPayment">Go to Payment</button>
-
-			</div>
-
-		</div>
+            </div>
 
 
 
-	</div>
 
-	<!-- BEGIN PHP Include for Footer Element -->
-	<?php include "components/footer.php"; ?>
-	<!-- END PHP Include for Footer Element -->
+
+
+        </div>
+
+
+
+    </div>
+
+    <!-- BEGIN PHP Include for Footer Element -->
+    <?php include "components/footer.php"; ?>
+    <!-- END PHP Include for Footer Element -->
 
 
 
@@ -84,7 +82,7 @@
 
 
 
-	</div>
+    </div>
 </body>
 
 </html>

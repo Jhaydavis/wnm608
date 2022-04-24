@@ -23,7 +23,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: rgb(47, 45, 45);
 }
 a:hover {
   text-decoration: underline;
@@ -169,7 +169,7 @@ hr {
 
 .card {
   text-align: left;
-  color: rgb(252, 248, 248);
+  color: rgb(42, 38, 38);
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.55);
   border-radius: 10px;
@@ -202,7 +202,7 @@ hr {
   border-radius: 10px;
   text-align: left;
   border: #000 1px solid;
-  color: rgb(248, 242, 242);
+  color: rgb(51, 47, 47);
   background-color: rgba(2, 0, 0, 0.5);
   padding-left: 2em;
   padding-right: 2em;

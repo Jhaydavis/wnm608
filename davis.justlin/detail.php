@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html>
 
 <head>
@@ -25,16 +26,16 @@
 		</div>
 
 
-		<div class="storeContainerPaintings">
+		<div class="storeItemFlex">
 
-			<div class="productDetail">
-				<img src="img/art2.jpg" class="productImage" alt="Car Art">
-				<h2>Product Detail</h2>
-				<p class="productPrice">$99.99</p>
-				<p>Some text about the GT4. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt undeiste atque vitae quasi animi libero sit corrupti repudiandae facilis!</p>
-				<hr>
-				<button class="productButton"><a href="payment.php">Go to Payment</a></button>
-			</div>
+			<?php
+
+			include_once "components/functions.php";
+			include_once "components/templates-hr.php";
+			$product = makeQuery(makeConn(), "SELECT *  FROM `products` WHERE `id`=" . $_GET['id']);
+			echo '<div class="storeItemFlex">', array_reduce($product, 'productListTemplate'), '</div>';
+			?>
+
 
 		</div>
 
