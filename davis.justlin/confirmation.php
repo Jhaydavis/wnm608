@@ -29,7 +29,7 @@ resetCart();
         <div class="siteInfo">
             <h3>Purchase Confirmation</h3>
 
-            <p>Thank you for your order!</p>
+            <p>Your art item are being processed! Thank you for your order!</p>
             <hr>
             <button class="productButton"><a href="index.php">Continue Shopping</a></button>
 
