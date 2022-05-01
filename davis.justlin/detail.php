@@ -1,3 +1,10 @@
+<?php
+include_once "components/functions.php";
+include_once "components/templates-hr.php";
+
+?>
+
+
 <!doctype html>
 
 <html>
@@ -30,8 +37,7 @@
 
 			<?php
 
-			include_once "components/functions.php";
-			include_once "components/templates-hr.php";
+
 			$product = makeQuery(makeConn(), "SELECT *  FROM `products` WHERE `id`=" . $_GET['id']);
 			echo '<div class="storeItemFlex">', array_reduce($product, 'productListTemplate'), '</div>';
 			?>

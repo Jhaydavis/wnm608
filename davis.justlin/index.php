@@ -1,3 +1,8 @@
+<?php
+include_once "components/functions.php";
+include_once "components/templates.php";
+?>
+
 <!doctype html>
 <html>
 

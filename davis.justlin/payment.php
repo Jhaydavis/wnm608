@@ -1,3 +1,9 @@
+<?php
+include_once "components/functions.php";
+include_once "components/templates-hr.php";
+include_once "components/cartList.php";
+?>
+
 <!doctype html>
 <html>
 

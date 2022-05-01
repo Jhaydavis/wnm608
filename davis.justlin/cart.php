@@ -1,3 +1,11 @@
+<?php
+include_once "components/functions.php";
+include_once "components/templates-hr.php";
+include_once "components/cartList.php";
+
+
+
+?>
 <!doctype html>
 <html>
 
@@ -27,45 +35,39 @@
         <div class="card">
 
             <?php
+            //print_p(getCartItems());
+            $cart_items = getCartItems();
 
-            include_once "components/functions.php";
-            include_once "components/templates-cart.php";
             //$product = makeQuery(makeConn(), "SELECT *  FROM `products` WHERE `id`=" . $_GET['id']);
             //echo '<div class="storeItemFlex">', array_reduce($product, 'productListTemplate'), '</div>';
-            $cart = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `id` IN(2,4,6)");
+            // $cart = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `id` IN(2,4,6)");
+
+
+
             ?>
 
             <div class="storeItemFlex">
 
-                <?= array_reduce($cart, 'cartListTemplate') ?>
+                <?= array_reduce($cart_items, 'cartListTemplate') ?>
             </div>
             <div class="productDetail">
-                <h2>Cart Total</h2>
-                <div class="card">
-                    <h3>Sub Total</h3>
-                    <p>&dollar;199.00</p>
+                <?= cartTotals() ?>
+            </div>
 
-                    <h3>Taxes</h3>
-                    <p>&dollar;19.00</p>
-
-                    <h3>Total</h3>
-                    <p>&dollar;118.00</p>
-                </div>
-
-                <div class="cartItem">
-
-                    <button class="productButton"><a href="payment.php?">Go to Payment</a></button>
-
-                </div>
+            <div class="cartItem">
+                <button class="productButton"><a href="index.php">Continue Shopping</a></button>
+                <button class="productButton"><a href="payment.php?">Go to Payment</a></button>
 
             </div>
 
-
-
-
-
-
         </div>
+
+
+
+
+
+
+    </div>
 
 
 
