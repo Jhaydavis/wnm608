@@ -7,7 +7,8 @@
             <ul>
                 <li><a href="about.php">About</a></li>
                 <li><a href="index.php">Shop</a></li>
-                <li><a href="cart.php">Cart</a></li>
+                <li><a href="cart.php"><span>Cart</span>
+                        <span class="badge"><?= makeCartBadge(); ?></span></a></li>
                 <li><a href="contact.php">Contact</a></li>
 
                 <li><a href="adminLogin.php">Admin Login</a></li>
