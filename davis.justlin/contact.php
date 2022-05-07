@@ -1,4 +1,9 @@
+<?php
+include_once "components/functions.php";
+include_once "components/templates.php";
+?>
 <!doctype html>
+
 <html>
 
 <head>
@@ -32,9 +37,9 @@
 				<label class="form-control-label">Email</label>
 				<input type="text" class="form-input" id="email" placeholder="Email Address">
 
-				<label class="form-control-label">Message</label>
-				<textarea rows="4" cols="50" name="comment" form="usrform">
-</textarea>
+				<label class="form-control-label">Message</label><br>
+				<textarea rows="4" cols="50" name="comment" form="userform">
+				</textarea>
 				<hr>
 				<button class="buttonPurchase">Send</button>
 

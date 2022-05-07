@@ -14,6 +14,12 @@
                 <li><a href="adminLogin.php">Admin Login</a></li>
                 <li><a href="admin/users.php">Users</a></li>
             </ul>
+
+            <div class="">
+                <form action="" id="product-search">
+                    <input type="search" class="hotdog" placeholder="Search Products">
+                </form>
+            </div>
+
         </div>
-    </div>
 </header>

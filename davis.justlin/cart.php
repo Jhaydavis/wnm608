@@ -46,11 +46,11 @@ include_once "components/cartList.php";
 
             ?>
 
-            <div class="storeItemFlex">
+            <div class="">
 
                 <?= array_reduce($cart_items, 'cartListTemplate') ?>
             </div>
-            <div class="productDetail">
+            <div class="productCard-cart">
                 <?= cartTotals() ?>
             </div>
 

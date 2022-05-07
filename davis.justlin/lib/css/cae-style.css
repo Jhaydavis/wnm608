@@ -4,6 +4,9 @@
 @media (min-width: 500px) {
 }
 
+
+
+
 .jsonList {
   font-family: eurostile;
   font-weight:bold;
@@ -13,6 +16,49 @@
   padding-bottom: 20px;
   border-radius: 15px;
 }
+
+.filterUI {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  
+
+}
+
+.display-inline-wrap {
+  display: wrap;
+}
+
+.display-flex {
+  display: flex;
+}
+.display-inline-flex {
+  display: inline-flex;
+}
+.display-inline-flex-promo {
+  display: inline-flex;
+  width: 100%;
+}
+
+.display-block {
+  display: block;
+}
+.display-inline-block {
+  display: flex;
+}
+
+.flex-stretch {
+  flex: 1 1 auto;
+}
+.flex-none {
+  flex: none;
+  margin-left: auto;
+  
+}
+.flex-align-center {
+  align-items: center;
+}
+
 
 #adminForm {
   margin-left: 100px;
@@ -181,9 +227,40 @@ margin-bottom: 15px;
 }
 
 .card {
-  text-align: left;
+  
   color: rgb(247, 243, 243);
 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 2em;
+  padding-top: 2em;
+  margin: 10px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.cardTotals {
+  text-align: left;
+  color: rgb(247, 243, 243);
+  align-content: center;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 2em;
+  padding-top: 2em;
+  margin: 10px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.card-CartTotal {
+  text-align: center;
+  color: rgb(247, 243, 243);
+align-content: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.55);
   border-radius: 10px;
   padding-left: 2em;
@@ -216,6 +293,14 @@ margin-bottom: 15px;
   min-width: none;
 }
 
+
+.aboutImage{
+
+  max-width: 100%;
+  height: auto;
+}
+
+
 .productImage {
   border-radius: 10px;
   width: fit-content;
@@ -226,6 +311,22 @@ margin-bottom: 15px;
   flex: wrap;
   align-content: center;
   max-width: 100%;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-family: eurostile;
+  padding: 1.5em;
+  border-radius: 0.5em;
+  border: #565863 1px solid;
+  background-color: rgba(24, 4, 4, 0.5);
+  /*  box-shadow: 3px -3px 29px  #2B1111; */
+}
+
+.productCard-cart {
+  display: block;
+  flex: wrap;
+  align-content: center;
+  max-width: 400px%;
   margin-right: 15px;
   margin-bottom: 15px;
   text-align: center;
@@ -248,15 +349,66 @@ margin-bottom: 15px;
   font-weight: 600;
 }
 
+select {
+  font-family: eurostile;
+  font-size: 1em;
+  font-weight: 100;
+  transition: all 0.6s;color: #fff;
+  border-radius: .3em;
+  padding: 0.5em;
+  margin-top: 5px;
+  background-color: #361814;
+  text-align: center;
+  cursor: pointer;
+
+
+}
+
+.js-sort{
+
+color: #fff;
+border-radius: .3em;
+padding: 0.5em;
+margin-top: 5px;
+background-color: #361814;
+text-align: center;
+cursor: pointer;
+width: 150px;
+height: 50px;
+align-self: center;
+font-family: eurostile;
+font-size: 1em;
+font-weight: 100;
+transition: all 0.6s;
+}
+
+.filterButton {
+
+    color: #fff;
+    border-radius: .3em;
+    padding: 0.5em;
+    margin-top: 5px;
+    background-color: #361814;
+    text-align: center;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    align-self: center;
+    font-family: eurostile;
+    font-size: 1em;
+    font-weight: 100;
+    transition: all 0.6s;
+}
+
 .productButton {
   color: #fff;
-  border-radius: 1em;
+  border-radius: .3em;
   padding: 0.5em;
   margin-top: 15px;
   background-color: #361814;
   text-align: center;
   cursor: pointer;
-  width: fit-content;
+  width: 110px;
   align-self: center;
   font-family: eurostile;
   font-size: 1em;
@@ -357,7 +509,16 @@ table tr {
   padding-left: 1em;
   text-align: center;
 }
-
+.hotdog {
+  color: #afa7a7;
+  text-align: center;
+  border-radius: 3em;
+  padding: 5px 5px;
+  width:150px;
+  display: flex;
+  border-color: #ef4f0a;
+  background-color: #230101;
+}
 
 .form-input {
   display: flex;
