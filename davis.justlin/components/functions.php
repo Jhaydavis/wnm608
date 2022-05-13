@@ -25,6 +25,18 @@ function makeConn()
     return $conn;
 }
 
+
+function makePDOConn()
+{
+    try {
+        $conn = new PDO(...PDOAuth());
+    } catch (PDOException $e) {
+        die($e->getMessage());
+    }
+    return $conn;
+}
+
+
 // Makes a query to the database using the established connection
 function makeQuery($conn, $qry)
 {

@@ -28,7 +28,7 @@ include_once "components/templates.php";
 
         <div class="siteInfo">
             <p>Welcome to Car Enthusiast Art! Whether you're looking for paintings, high quality prints, or Digital NFT's you'll find it here. This month features automotive manufacturer, Porsche. Art ranges from the iconic 911 to electrified Taycan </p>
-            <hr>
+
             <h2>View Art By:</h2>
             <div class="filterUI">
                 <div class="flex-non">
