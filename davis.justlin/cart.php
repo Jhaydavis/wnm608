@@ -26,57 +26,50 @@ include_once "components/cartList.php";
 
 
         <div class="siteInfo">
-            <h3>Your Shopping Cart</h3>
-
-
-        </div>
-
-
-        <div class="card">
-
-            <?php
-            //print_p(getCartItems());
-            $cart_items = getCartItems();
-
-            //$product = makeQuery(makeConn(), "SELECT *  FROM `products` WHERE `id`=" . $_GET['id']);
-            //echo '<div class="storeItemFlex">', array_reduce($product, 'productListTemplate'), '</div>';
-            // $cart = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `id` IN(2,4,6)");
 
 
 
-            ?>
 
-            <div class="">
 
-                <?= array_reduce($cart_items, 'cartListTemplate') ?>
+
+            <div class="cartCard">
+                <h2>Shopping Cart</h2>
+
+                <?php
+                //print_p(getCartItems());
+                $cart_items = getCartItems();
+
+                //$product = makeQuery(makeConn(), "SELECT *  FROM `products` WHERE `id`=" . $_GET['id']);
+                //echo '<div class="storeItemFlex">', array_reduce($product, 'productListTemplate'), '</div>';
+                // $cart = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `id` IN(2,4,6)");
+
+
+
+                ?>
+
+                <div class="">
+
+                    <?= array_reduce($cart_items, 'cartListTemplate') ?>
+                </div>
+                <div class="productCard-cart">
+                    <?= cartTotals() ?>
+                </div>
+
+                <div class="cartItem">
+                    <button class="productButton"><a href="index.php">Continue Shopping</a></button>
+                    <button class="productButton"><a href="payment.php?">Go to Payment</a></button>
+
+                </div>
+
+
+
+
+
             </div>
-            <<<<<<< HEAD <div class="productCard-cart">
-                <?= cartTotals() ?>
-        </div>
 
-        <div class="cartItem">
-            <button class="productButton"><a href="index.php">Continue Shopping</a></button>
-            <button class="productButton"><a href="payment.php?">Go to Payment</a></button>
+
 
         </div>
-
-        =======
-        <div class="productDetail">
-            <?= cartTotals() ?>
-        </div>
-
-        <div class="cartItem">
-            <button class="productButton"><a href="index.php">Continue Shopping</a></button>
-            <button class="productButton"><a href="payment.php?">Go to Payment</a></button>
-
-        </div>
-
-        >>>>>>> 5e361d31dab5c5590672bf1854eb36c7a329138e
-    </div>
-
-
-
-
 
 
     </div>

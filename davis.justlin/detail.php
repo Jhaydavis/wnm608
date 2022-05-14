@@ -30,22 +30,22 @@ include_once "components/templates-hr.php";
 			<h3>Product Detail</h3>
 
 
+
+
+
+			<div class="storeItemFlex">
+
+				<?php
+
+
+				$product = makeQuery(makeConn(), "SELECT *  FROM `products` WHERE `id`=" . $_GET['id']);
+				echo '<div class="storeItemFlex">', array_reduce($product, 'productListTemplate'), '</div>';
+				?>
+
+
+			</div>
+
 		</div>
-
-
-		<div class="storeItemFlex">
-
-			<?php
-
-
-			$product = makeQuery(makeConn(), "SELECT *  FROM `products` WHERE `id`=" . $_GET['id']);
-			echo '<div class="storeItemFlex">', array_reduce($product, 'productListTemplate'), '</div>';
-			?>
-
-
-		</div>
-
-
 
 	</div>
 

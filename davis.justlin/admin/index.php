@@ -3,14 +3,14 @@ include "../components/functions.php";
 
 
 $empty_product = (object)[
-    "name" => "",
-    "description" => "",
-    "price" => "",
-    "type" => "",
-    "image_thumbnail" => "",
-    "image_hires" => "",
-    "inventory_status" => "",
-    "inventory_qty" => ""
+    "name" => "928GTS",
+    "description" => "The classis from Risky Business",
+    "price" => "900",
+    "type" => "Digital",
+    "image_thumbnail" => "img/painting-caymans-tb.jpg",
+    "image_hires" => "img/painting-caymans-tb.jpg",
+    "inventory_status" => "1",
+    "inventory_qty" => "2"
 
 ];
 
@@ -22,7 +22,7 @@ try {
     $conn = makePDOConn();
     switch ($_GET['action']) {
         case "update":
-            //echo ("Connected!");
+            echo ("Connected!");
             $statement = $conn->prepare("UPDATE
             `products`
             SET
@@ -48,12 +48,44 @@ try {
 
 
             ]);
-            //echo ($_POST['product-type']);
+            echo ($_POST["id"]);
+            echo ($_POST["product-name"]);
+
+
 
             header("location:{$_SERVER['PHP_SELF']}?id={$_GET['id']}");
             break;
 
         case "create":
+            echo ("Connected!");
+            $statement = $conn->prepare("UPDATE
+            `products`
+            (
+                `name`
+                `description`
+                `price`
+                `type`
+                `image_thumbnail`
+                `image_hires`
+                `inventory_qty`
+                `date_added`
+                `date_updated`)
+            VALUES (?,?,?,?,?,?,?,NOW(),NOW())
+            ");
+
+            $statement->execute([
+                $_POST["product-name"],
+                $_POST["product-description"],
+                $_POST["product-price"],
+                $_POST["product-type"],
+                $_POST["product-image_thumbnail"],
+                $_POST["product-image_hires"],
+                $_POST["product-inventory_qty"]
+
+
+
+            ]);
+            $id = $conn->lastInsertID();
 
             header("location:{$_SERVER['PHP_SELF']}?id={$_GET['id']}");
             break;
@@ -93,9 +125,10 @@ function showProductPage($o)
 
     $addoredit = $id == "new" ? "Add" : "Edit";
     $createorupdate = $id == "new" ? "create" : "update";
-    $delete = $id == "new" ? "" : "<a href='{$_SESSION['PHP_SELF']}?id=$id&action=delete'>Delete User</a>";
-
     $images = explode(", ", $o->img_tb);
+    $delete = $id == "new" ? "" : "<a href='{$_SESSION['PHP_SELF']}?id=$id&action=delete'>Delete Product</a>";
+
+
     $display = <<<HTML
      <div>
         <h3>$o->name</h3>
@@ -122,7 +155,7 @@ function showProductPage($o)
         </div>
     </div>
     <br>
-    <div class="flex-stretch"><a href="users.php">Go Back</a></div>
+    <div class="flex-stretch"><a href="index.php">Go Back</a></div>
     <div class="flex-none">$delete</div>
    
     HTML;
@@ -137,7 +170,7 @@ function showProductPage($o)
 
         <div class="form-control">
                 <label class="form-label" for="product-name">Name: </form-label>
-                <input class ="form-input" id="product-name" name="product-name" type="text" placeholder="enter product name" value="$o->name">
+                <input class ="form-input" id="product-name" name="product-name" type="text" value="$o->name" placeholder="enter product name" >
             </div>
             <div class="form-control">
                 <label class="form-label" for="product-type">Type: </form-label>
@@ -167,7 +200,7 @@ function showProductPage($o)
             </div>
 
             <div class="form-control">
-                <input class ="form-button" type="submit" value="Save Changes">         
+                <input class ="form-button" id="submit "type="submit" value="Save Changes">         
             </div>
         </div>
 
@@ -178,23 +211,17 @@ function showProductPage($o)
     
     </div>
 HTML;
-    $delete = $id == "new" ? "" : "<a href='{$_SERVER['PHP_SELF']}?id=$id&action=delete'>Delete Product</a>";
-
-
 
     $output = $id == "new" ? $form :
         "<div class = 'grid gap'>
-    <div class = 'col-xs-12 col-md-7'>$display</div>
-    <div class = 'col-xs-12 col-md-5'>$form</div>
+        <div class = 'col-xs-12 col-md-7'>$display</div>
+        <div class = 'col-xs-12 col-md-5'>$form</div>
     </div>
-
-    
-    
-";
+    ";
 
 
+    $delete = $id == "new" ? "" : "<a href='{$_SERVER['PHP_SELF']}?id=$id&action=delete'>Delete Product</a>";
 
-    $delete = $id == "new" ? "" : "<a href='{$_SERVER['PHP_SELF']}?id=$id&action=delete'>Delete User</a>";
 
 
     echo <<<HTML
@@ -210,8 +237,10 @@ HTML;
 <html>
 
 <head>
-    <!-- BEGIN PHP Include for Meta Content -->
-    <?php include "../components/meta.php"; ?>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.typekit.net/ilv2uut.css" />
     <!-- END PHP Include for Meta Content -->
     <link href="../lib/css/cae-style.css" rel="stylesheet" type="text/css">
     <title>Car Enthusiast Art - Product Admin</title>
@@ -260,19 +289,13 @@ HTML;
             ?>
                 <h2>Product List</h2>
 
-                <?php
+            <?php
                 $result = makeQuery(makeConn(), "SELECT * FROM `products`");
 
                 echo array_reduce($result, 'productListItem');
+            }
+            ?>
 
-                for ($i = 0; $i < count($users_array); $i++) {
-
-                    echo "<li>
-                <a href='{$_SERVER['PHP_SELF']}?id=$i'>{$users_array[$i]->name}</a>
-                </li>";
-                }
-                ?>
-            <?php } ?>
 
 
         </div>
