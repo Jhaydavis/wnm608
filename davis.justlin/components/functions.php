@@ -26,10 +26,6 @@ function makeConn()
 }
 
 
-
-
-
-
 function makePDOConn()
 {
     try {
@@ -42,6 +38,7 @@ function makePDOConn()
 
 
 // Makes a query to the database using the established connection
+
 function makeQuery($conn, $qry)
 {
 

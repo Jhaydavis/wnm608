@@ -3,27 +3,27 @@ include "../components/functions.php";
 
 
 $empty_product = (object)[
-    "name" => "928GTS",
-    "description" => "The classis from Risky Business",
-    "price" => "900",
-    "type" => "Digital",
-    "image_thumbnail" => "img/painting-caymans-tb.jpg",
-    "image_hires" => "img/painting-caymans-tb.jpg",
-    "inventory_status" => "1",
-    "inventory_qty" => "2"
+    "name" => "",
+    "description" => "",
+    "price" => "",
+    "type" => "",
+    "image_thumbnail" => "",
+    "image_hires" => "",
+    "inventory_status" => "",
+    "inventory_qty" => ""
 
 ];
 
 
 //LOGIC
 
-
-try {
-    $conn = makePDOConn();
-    switch ($_GET['action']) {
-        case "update":
-            //echo ("Connected!");
-            $statement = $conn->prepare("UPDATE
+if (isset($_GET['action'])) {
+    try {
+        $conn = makePDOConn();
+        switch ($_GET['action']) {
+            case "update":
+                //echo ("Connected!");
+                $statement = $conn->prepare("UPDATE
             `products`
             SET
                 `name`=?,
@@ -32,33 +32,35 @@ try {
                 `type`=?,
                 `image_thumbnail`=?,
                 `image_hires`=?,
+                `inventory_status`=?,
                 `inventory_qty`=?,
                 `date_updated`=NOW()
             WHERE `id`=? 
             ");
-            $statement->execute([
-                $_POST["product-name"],
-                $_POST["product-description"],
-                $_POST["product-price"],
-                $_POST["product-type"],
-                $_POST["product-image_thumbnail"],
-                $_POST["product-image_hires"],
-                $_POST["product-inventory_qty"],
-                $_GET["id"]
+                $statement->execute([
+                    $_POST["product-name"],
+                    $_POST["product-description"],
+                    $_POST["product-price"],
+                    $_POST["product-type"],
+                    $_POST["product-image_thumbnail"],
+                    $_POST["product-image_hires"],
+                    $_POST["product-inventory_status"],
+                    $_POST["product-inventory_qty"],
+                    $_GET["id"]
 
 
-            ]);
-            //echo ($_POST["id"]);
-            // echo ($_POST["product-name"]);
+                ]);
+                //echo ($_POST["id"]);
+                // echo ($_POST["product-name"]);
 
 
 
-            header("location:{$_SERVER['PHP_SELF']}?id={$_GET['id']}");
-            break;
+                header("location:{$_SERVER['PHP_SELF']}?id={$_GET['id']}");
+                break;
 
-        case "create":
-            echo ("Connected!");
-            $statement = $conn->prepare("UPDATE
+            case "create":
+                //echo ("Connected!");
+                $statement = $conn->prepare("INSERT INTO
             `products`
             (
                 `name`
@@ -67,36 +69,42 @@ try {
                 `type`
                 `image_thumbnail`
                 `image_hires`
+                `inventory_status`
                 `inventory_qty`
                 `date_added`
                 `date_updated`)
-            VALUES (?,?,?,?,?,?,?,NOW(),NOW())
+            VALUES (?,?,?,?,?,?,?,?,NOW(),NOW())
             ");
 
-            $statement->execute([
-                $_POST["product-name"],
-                $_POST["product-description"],
-                $_POST["product-price"],
-                $_POST["product-type"],
-                $_POST["product-image_thumbnail"],
-                $_POST["product-image_hires"],
-                $_POST["product-inventory_qty"]
+                $statement->execute([
+                    $_POST["product-name"],
+                    $_POST["product-description"],
+                    $_POST["product-price"],
+                    $_POST["product-type"],
+                    $_POST["product-image_thumbnail"],
+                    $_POST["product-image_hires"],
+                    $_POST["product-inventory_status"],
+                    $_POST["product-inventory_qty"]
 
 
 
-            ]);
-            $id = $conn->lastInsertID();
+                ]);
+                $id = $conn->lastInsertID();
 
-            header("location:{$_SERVER['PHP_SELF']}?id={$_GET['id']}");
-            break;
+                header("location:{$_SERVER['PHP_SELF']}?id={$_GET['id']}");
+                break;
 
-        case "delete":
+            case "delete":
 
-            header("location:{$_SERVER['PHP_SELF']}?id={$_GET['id']}");
-            break;
+                echo ("DELETED");
+                $statement = $conn->prepare("DELETE FROM `products` WHERE id=?");
+                $statement->execute([$_GET['id']]);
+                header("location:{$_SERVER['PHP_SELF']}");
+                break;
+        }
+    } catch (PDOException $e) {
+        die($e->getMessage());
     }
-} catch (PDOException $e) {
-    die($e->getMessage());
 }
 
 
@@ -127,7 +135,8 @@ function showProductPage($o)
     $addoredit = $id == "new" ? "Add" : "Edit";
     $createorupdate = $id == "new" ? "create" : "update";
     $images = explode(", ", $o->img_tb);
-    $delete = $id == "new" ? "" : "<a href='{$_SESSION['PHP_SELF']}?id=$id&action=delete'>Delete Product</a>";
+    $delete = $id == "new" ? "" : "<a href='{$_SERVER['PHP_SELF']}?id=$id&action=delete'>Delete Product</a>";
+
 
 
     $display = <<<HTML
@@ -162,58 +171,62 @@ function showProductPage($o)
     HTML;
 
     $form = <<<HTML
-    <div>
+    
         
         
     
     <form method="post" action="{$_SERVER['PHP_SELF']}?id=$id&action=$createorupdate"> 
        <h2>$addoredit Product</h2>
 
-        <div class="form-control">
-                <label class="form-label" for="product-name">Name: </form-label>
-                <input class ="form-input" id="product-name" name="product-name" type="text" value="$o->name" placeholder="enter product name" >
-            </div>
             <div class="form-control">
-                <label class="form-label" for="product-type">Type: </form-label>
-                <input class ="form-input" id="product-type" name="product-type" type="text" placeholder="enter produt type" value="$o->type">
-            </div>
-            <div class="form-control">
-                <label class="form-label" for="product-price">Price: </form-label>
-                <input class ="form-input" id="product-price" name="product-price" type="Number" placeholder="enter produt price"  min="100" max="10000"  value="$o->price">
-            </div>
-            <div class="form-control">
-                <label class="form-label" for="product-inventory_qty">Qty: </form-label>
-                <input class ="form-input" id="product-inventory_qty" name="product-inventory_qty" type="Number" placeholder="enter produt qty"  min="1 " max="1000" step="1.00" value="$o->inventory_qty">
+                <label class="form-label" for="product-name">Name: </label>
+                <input name="product-name" class ="form-input" id="product-name"  type="text" value="$o->name" placeholder="enter product name" >
             </div>
 
             <div class="form-control">
-                <label class="form-label" for="product-description">Description: </form-label>
-                <textarea class ="form-input" id="product-description" name="product-description"  rows="2" cols="50"placeholder="enter product description">$o->description</textarea>
+                <label class="form-label" for="product-description">Description: </label>
+                <textarea name="product-description" class ="form-input" id="product-description" name="product-description"  rows="2" cols="50"placeholder="enter product description">$o->description</textarea>
             </div>
 
             <div class="form-control">
-                <label class="form-label" for="product-image_thumbnail">Thumbnail Image: </form-label>
-                <input class ="form-input" id="product-image_thumbnail" name="product-image_thumbnail" placeholder="Enter product images" type="text" value="$o->img_tb">         
-            </div>
-            <div class="form-control">
-                <label class="form-label" for="product-image_hires">Hi-res Image: </form-label>
-                <input class ="form-input" id="product-image_hires" name="product-image_hires" placeholder="Enter product images" type="text" value="$o->img_tb">         
+                <label class="form-label" for="product-price">Price: </label>
+                <input name="product-price" class ="form-input" id="product-price"  type="Number" placeholder="enter produt price"  min="100" max="10000"  value="$o->price">
             </div>
 
             <div class="form-control">
-                <input class ="form-button" type="submit" value="Save Changes">         
+                <label class="form-label" for="product-type">Type: </label>
+                <input name="product-type" class ="form-input" id="product-type"  type="text" placeholder="enter produt type" value="$o->type">
             </div>
-        </div>
 
+            <div class="form-control">
+                <label class="form-label" for="product-image_thumbnail">Thumbnail Image: </label>
+                <input name="product-image_thumbnail" class ="form-input" id="product-image_thumbnail"  placeholder="Enter product images" type="text" value="$o->img_tb">         
+            </div>
+
+            <div class="form-control">
+                <label class="form-label" for="product-image_hires">Hi-res Image: </label>
+                <input name="product-image_hires" class ="form-input" id="product-image_hires"  placeholder="Enter product images" type="text" value="$o->img_tb">         
+            </div>
+
+            <div class="form-control">
+                <label class="form-label" for="product-inventory_status">Status: </label>
+                <input name="product-inventory_qty" class ="form-input" id="product-inventory_status"  type="Number" placeholder="enter produt status"  min="0 " max="1" step="1.00" value="$o->inventory_status">
+            </div>
+
+            <div class="form-control">
+                <label class="form-label" for="product-inventory_qty">Qty: </label>
+                <input name="product-inventory_qty" class ="form-input" id="product-inventory_qty"  type="Number" placeholder="enter produt qty"  min="1 " max="1000" step="1.00" value="$o->inventory_qty">
+            </div>
+        
+            <div class="form-control">
+                <input class ="form-button" type="submit" value="Submit">         
+            </div>
+        
         
     </form>
-      
-   
-    
-    </div>
 HTML;
 
-    $output = $id == "new" ? $form :
+    $output = $id == "new" ? "<div>$form</div>" :
         "<div class = 'grid gap'>
         <div class = 'col-xs-12 col-md-7'>$display</div>
         <div class = 'col-xs-12 col-md-5'>$form</div>
@@ -221,13 +234,13 @@ HTML;
     ";
 
 
-    $delete = $id == "new" ? "" : "<a href='{$_SERVER['PHP_SELF']}?id=$id&action=delete'>Delete Product</a>";
+
 
 
 
     echo <<<HTML
  
-        $output 
+      $output
 
 HTML;
 }
@@ -235,16 +248,14 @@ HTML;
 ?>
 
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://use.typekit.net/ilv2uut.css" />
+    <!-- BEGIN PHP Include for Meta Content -->
+    <?php include "../components/meta-admin.php"; ?>
     <!-- END PHP Include for Meta Content -->
-    <link href="../lib/css/cae-style.css" rel="stylesheet" type="text/css">
-    <title>Car Enthusiast Art - Product Admin</title>
+
+    <title>Car Enthusiast Art - Product Admin Page</title>
 
 </head>
 
@@ -254,12 +265,12 @@ HTML;
 
             <div class="container display-flex">
                 <div class="flex-none">
-                    <h1>Product Admin</h1>
+                    <h1>Product Admin Page</h1>
                 </div>
                 <div class="flex-stretch">
                     <nav class="nav nav-flex flex-none">
                         <ul>
-                            <li><a href="index.php">Product List</a></li>
+                            <li><a href="<?= $_SERVER['PHP_SELF'] ?>">Product List</a></li>
                             <li><a href="<?= $_SERVER['PHP_SELF'] ?>?id=new">Add New Product</a></li>
                             <li><a href="../index.php">Return to Site</a></li>
                         </ul>
@@ -279,7 +290,7 @@ HTML;
             <?php
 
             if (isset($_GET['id'])) {
-                echo showProductPage(
+                showProductPage(
                     $_GET['id'] == "new" ?
                         $empty_product :
                         makeQuery(makeConn(), "SELECT * FROM `products` WHERE `id`=" . $_GET['id'])[0]
@@ -290,12 +301,15 @@ HTML;
             ?>
                 <h2>Product List</h2>
 
-            <?php
-                $result = makeQuery(makeConn(), "SELECT * FROM `products`");
+                <?php
+                $result = makeQuery(makeConn(), "SELECT * FROM `products` ORDER BY `date_added`DESC");
 
                 echo array_reduce($result, 'productListItem');
-            }
-            ?>
+                ?>
+
+
+            <?php } ?>
+
 
 
 

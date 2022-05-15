@@ -566,7 +566,8 @@ table tr {
   margin-bottom: 0.5em;
   margin-left: 2em;
   font: inherit;
-  width: auto;
+  width: 40%;
+  border-radius: .3em;
 }
 .form-control {
   color: #f7f7fc;

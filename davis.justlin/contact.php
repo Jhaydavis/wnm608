@@ -26,9 +26,10 @@ include_once "components/templates.php";
 
 
 		<div class="siteInfo">
-			<h3>Performance Car Art</h3>
+			<h3>Contact us</h3>
+			<div class="card"><img src="img/digital-911turbos-hr.jpg" class="aboutImage" alt="Car Enthusiast Art 911 GT3"></div>
 
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint expedita at vero consectetur deserunt saepe ipsum unde, facilis consequatur, quidem obcaecati distinctio officiis modi natus aliquam, numquam debitis qui reiciendis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint expedita at vero consectetur deserunt saepe ipsum unde, facilis consequatur, quidem obcaecati distinctio officiis modi natus aliquam, numquam debitis qui reiciendisLorem ipsum dolor sit amet, consectetur adipisicing elit. Sint expedita at vero consectetur deserunt saepe ipsum unde, facilis consequatur, quidem obcaecati distinctio officiis modi natus aliquam, numquam debitis qui reiciendis</p>
+			<p>For the finest in performance car art and design, contact Jhay Davis using the form below.</p>
 
 			<form>
 				<label class="form-control-label">Name</label>
@@ -41,7 +42,7 @@ include_once "components/templates.php";
 				<textarea rows="4" cols="50" name="comment" form="userform">
 				</textarea>
 				<hr>
-				<button class="buttonPurchase">Send</button>
+				<button class="productButton"><a href="email-confirmation.php">Send</a></button>
 
 			</form>
 		</div>
