@@ -22,7 +22,7 @@ try {
     $conn = makePDOConn();
     switch ($_GET['action']) {
         case "update":
-            echo ("Connected!");
+            //echo ("Connected!");
             $statement = $conn->prepare("UPDATE
             `products`
             SET
@@ -48,8 +48,8 @@ try {
 
 
             ]);
-            echo ($_POST["id"]);
-            echo ($_POST["product-name"]);
+            //echo ($_POST["id"]);
+            // echo ($_POST["product-name"]);
 
 
 
@@ -98,6 +98,7 @@ try {
 } catch (PDOException $e) {
     die($e->getMessage());
 }
+
 
 //TEMPLATES
 
@@ -200,7 +201,7 @@ function showProductPage($o)
             </div>
 
             <div class="form-control">
-                <input class ="form-button" id="submit "type="submit" value="Save Changes">         
+                <input class ="form-button" type="submit" value="Save Changes">         
             </div>
         </div>
 
