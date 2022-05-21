@@ -31,19 +31,20 @@ include_once "components/templates.php";
 
 			<p>For the finest in performance car art and design, contact Jhay Davis using the form below.</p>
 
-			<form>
+			<form action="email-confirmation.php">
 				<label class="form-control-label">Name</label>
-				<input type="text" class="form-input" placeholder="Name">
+				<input type="text" class="form-input" placeholder="Name" id="name" name="name" required>
 
 				<label class="form-control-label">Email</label>
-				<input type="text" class="form-input" id="email" placeholder="Email Address">
+				<input type="text" class="form-input" id="email" placeholder="Email Address" name="Email" required>
 
 				<label class="form-control-label">Message</label><br>
-				<textarea rows="4" cols="50" name="comment" form="userform">
+				<textarea class="form-input" rows="4" cols="50" required>
 				</textarea>
 				<hr>
-				<button class="productButton"><a href="email-confirmation.php">Send</a></button>
-
+				<div>
+					<button class="productButton" type="submit" value="Send Email"> Send</button>
+				</div>
 			</form>
 		</div>
 

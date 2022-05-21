@@ -22,42 +22,58 @@ include_once "components/cartList.php";
 		<?php include "components/header.php"; ?>
 		<!-- END PHP Include for Header/Nav Element -->
 
-		<div class="siteInfo">
-			<h3>Payment Information</h3>
-			<hr>
+		<div class="storeItemFlex">
 
 
 
+			<div class="adminItemFlex">
 
-			<form>
-				<label class="form-control-label">Name</label>
-				<input type="text" class="form-input" placeholder="Name on Credit Card">
+				<?= array_reduce($cart_items, 'cartListTemplate') ?>
 
-				<label class="form-control-label">Address</label>
-				<input type="text" class="form-input" id="street" placeholder="Street Address">
-				<input type="text" class="form-input" id="city" placeholder="City">
-				<input type="number" class="form-input" id="zip" placeholder="Zip Code">
+				<div class="productCard-cart">
+					<?= cartTotals() ?>
+				</div>
 
-				<label class="form-control-label">CC Number</label>
-				<input type="number" class="form-input" placeholder="Enter">
+			</div>
 
 
-				<label class="form-control-label">Expiration Date</label>
-				<input type="text" class="form-input" id="exp-date" placeholder="DD/YY">
-				<hr>
-				<button class="productButton"><a href="confirmation.php">Purchase</a></button>
+			<div class="cartCard">
+				<form action="confirmation.php">
+					<label class="form-control-label">
+						<h3>Enter Payment Information</h3>
+					</label>
 
-			</form>
+					<label class="form-control-label">Name</label>
+					<input type="text" class="form-input" placeholder="Name on Credit Card" required>
+
+					<label class="form-control-label">Address</label>
+					<input type="text" class="form-input" id="street" placeholder="Street Address" required>
+					<input type="text" class="form-input" id="city" placeholder="City" required>
+					<input type="number" class="form-input" id="zip" placeholder="Zip Code" required>
+
+					<label class="form-control-label">CC Number</label>
+					<input type="number" class="form-input" placeholder="Enter" required>
 
 
+					<label class="form-control-label">Expiration Date</label>
+					<input type="month" class="form-input" id="exp-date" placeholder="DD/YY" required>
+					<hr>
+					<div>
+						<button class="productButton" type="submit" value="pay"> Purchase</button>
+					</div>
 
-
+				</form>
+			</div>
 		</div>
 
 
 
+	</div>
 
-		<?php include "components/footer.php"; ?>
+
+
+
+	<?php include "components/footer.php"; ?>
 
 
 

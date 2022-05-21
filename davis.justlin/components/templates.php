@@ -17,3 +17,31 @@ function productListTemplate($r, $o)
 
     HTML;
 }
+
+
+
+function recListTemplate($r, $o)
+{
+
+    return $r . <<<HTML
+    <div class="productCard">
+        <img src="$o->img_tb" class="productImage" alt="Car Art">
+        <h3><a href="detail.php?id=$o->id">$o->name</a></h3>
+       
+    </div>
+
+
+
+    HTML;
+}
+
+
+
+function recommendedProducts($a)
+{
+
+    $products = array_reduce($a, 'recListTemplate');
+    echo <<<HTML
+    <div class = "adminItemFlex">$products</div>
+    HTML;
+}

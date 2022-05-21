@@ -30,7 +30,7 @@ include_once "components/cartList.php";
 
 			<div class="card">
 
-				<img src="img/painting-911s-hr.jpg" class="aboutImage" alt="Car Enthusiast Art 911 GT3">
+				<img src="img/home-hero.jpg" class="aboutImage" alt="Car Enthusiast Art 911 GT3">
 				<h3>Performance Car Art</h3>
 
 				<p>Car Enthusisast Art explores experience design, creative, and technical development of high performance sports cars from an artistic perspective. This includes art pieces developed in acrylic, oils, and water color as well as digital formats. </p>

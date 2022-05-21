@@ -1,6 +1,11 @@
 <?php
 include_once "components/functions.php";
+//include_once "components/templates-hr.php";
+include_once "components/cartList.php";
 include_once "components/templates.php";
+
+
+
 ?>
 
 <!doctype html>
@@ -10,13 +15,8 @@ include_once "components/templates.php";
     <!-- BEGIN PHP Include for Meta Content -->
     <?php include "components/meta.php"; ?>
     <!-- END PHP Include for Meta Content -->
+    <title>Car Enthusiast Art - About Us</title>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <script src="js/functions.js"></script>
-    <script src="js/templates.js"></script>
-    <script src="js/product_list.js"></script>
-    <title>Car Enthusiast Art - Home Page</title>
 </head>
 
 <body>
@@ -26,42 +26,27 @@ include_once "components/templates.php";
         <?php include "components/header.php"; ?>
         <!-- END PHP Include for Header/Nav Element -->
 
+
         <div class="siteInfo">
-            <p>Welcome to Car Enthusiast Art! Whether you're looking for paintings, high quality prints, or Digital NFT's you'll find it here. This month features automotive manufacturer, Porsche. Art ranges from the iconic 911 to electrified Taycan </p>
 
-            <h2>View Art By:</h2>
-            <div class="filterUI">
-                <div class="flex-non">
-                    <button data-filter="type" data-value="" class="filterButton" type="button">All Art</button>
-                </div>
-                <div class="flex-non">
-                    <button data-filter="type" data-value="print" class="filterButton" type="button">Prints</button>
-                </div>
-                <div class="flex-non">
-                    <button data-filter="type" data-value="painting" class="filterButton" type="button">Paintings</button>
-                </div>
-                <div class="flex-non">
-                    <button data-filter="type" data-value="digital" class="filterButton" type="button">Digital</button>
-                </div>
-                <div class="flex-non">
+            <div class="cardHero">
 
-                    <select class="js-sort">
-                        <option value="">Sort by</option>
-                        <option value="1">Price $$$</option>
-                        <option value="2">Price $</option>
+                <img src="img/home-hero3.png" class="aboutImage" alt="Car Enthusiast Art 911 GT3">
+                <h2>Performance Car Fine Art</h2>
 
+                <p>Car Enthusisast Art explores experience design, creative, and technical development of high performance sports cars from an artistic perspective. This includes art pieces developed in acrylic, oils, and water color as well as digital formats. </p>
 
-                    </select>
-
-                </div>
+                <hr>
             </div>
+            <div>
+                <H3>Newest Gallery Arrivials!</H3>
+                <?php
+                $result = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `type` = 'digital' ORDER BY `date_added` DESC LIMIT 3");
 
-        </div>
+                recommendedProducts($result);
 
-        <div class="storeItemFlex">
-
-
-
+                ?>
+            </div>
         </div>
 
 
@@ -72,6 +57,7 @@ include_once "components/templates.php";
     <!-- BEGIN PHP Include for Footer Element -->
     <?php include "components/footer.php"; ?>
     <!-- END PHP Include for Footer Element -->
+
 
 
 

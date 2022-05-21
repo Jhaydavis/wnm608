@@ -5,17 +5,18 @@
         </div>
         <div class="navigation">
             <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="shop.php">Shop</a></li>
                 <li><a href="about.php">About</a></li>
-                <li><a href="index.php">Shop</a></li>
                 <li><a href="cart.php"><span>Cart</span>
                         <span class="badge"><?= makeCartBadge(); ?></span></a></li>
                 <li><a href="contact.php">Contact</a></li>
-                <li><a href="admin/users.php">Users</a></li>
+
             </ul>
 
             <div class="">
                 <form action="" id="product-search">
-                    <input type="search" class="hotdog" placeholder="Search Products">
+                    <input type="search" class="hotdog" placeholder="Search">
                 </form>
             </div>
 
