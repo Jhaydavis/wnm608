@@ -14,5 +14,5 @@ https://www.jhaydavis.me
 
 https://www.jhaydavis.me/aau/wnm608/
 
-https://www.jhaydavis.me/aau/wnm608/StyleGuide
+https://www.jhaydavis.me/aau/wnm608/styleguide
 
