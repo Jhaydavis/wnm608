@@ -37,14 +37,14 @@ include_once "components/cartList.php";
 			</div>
 
 
-			<div class="cartCard">
+			<div class="paymentCard">
 				<form action="confirmation.php">
 					<label class="form-control-label">
 						<h3>Enter Payment Information</h3>
 					</label>
 
 					<label class="form-control-label">Name</label>
-					<input type="text" class="form-input" placeholder="Name on Credit Card" required>
+					<input type="text" class="form-input" placeholder="Name on Card" required>
 
 					<label class="form-control-label">Address</label>
 					<input type="text" class="form-input" id="street" placeholder="Street Address" required>

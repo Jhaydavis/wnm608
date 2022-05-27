@@ -292,6 +292,8 @@ ul {
 .cartCard {
   display: block;
   flex: wrap;
+  width: 600px;
+  min-width: 350px;
   margin-right: auto;
   margin-left: auto;
   font-family: eurostile;
@@ -301,6 +303,8 @@ ul {
   background-color: rgba(68, 67, 67, 0.5);
   /*  box-shadow: 3px -3px 29px  #2B1111; */
 }
+
+
 .display-inline-wrap {
   display: wrap;
 }
@@ -403,10 +407,10 @@ align-content: center;
 }
 
 .paymentCard {
-  display: block;
+  display: flex;
   flex: wrap;
   align-content: center;
-  max-width: 350px;
+  max-width: 400px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 15px;
