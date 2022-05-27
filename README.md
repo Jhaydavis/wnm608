@@ -6,7 +6,7 @@ This project was developed by Jhay Davis during the Spring Semester at AAU as pa
 
 The initial setup for this project involved developing the CSS styling, HTML, PHP Includes/Requires, and MySQL integration. NOTE: Actual payment processing will not be in scope for this project.
 
-![Car Enthusiast Art Screen Shot](https://jhaydavis.me/aau/wnm608/screenshots/git-lp.jpg)
+![Car Enthusiast Art Screen Shot](https://github.com/Jhaydavis/wnm608/blob/main/davis.justlin/screenshots/git-lp.jpg)
 
 ## RELEVANT LINKS
 https://www.jhaydavis.me
