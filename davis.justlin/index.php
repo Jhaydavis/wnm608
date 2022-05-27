@@ -32,7 +32,7 @@ include_once "components/templates.php";
             <div class="cardHero">
 
                 <img src="img/home-hero3.png" class="aboutImage" alt="Car Enthusiast Art 911 GT3">
-                <h2>Performance Car Fine Art</h2>
+                <h2 class="home">Performance Car Fine Art</h2>
 
                 <p>Car Enthusisast Art explores experience design, creative, and technical development of high performance sports cars from an artistic perspective. This includes art pieces developed in acrylic, oils, and water color as well as digital formats. </p>
 

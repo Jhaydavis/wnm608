@@ -5,7 +5,9 @@
 }
 
 
-
+h2.home{
+  text-align: center;
+}
 
 .jsonList {
   font-family: eurostile;

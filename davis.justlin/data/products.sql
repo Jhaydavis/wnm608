@@ -59,8 +59,8 @@ INSERT INTO `products` (`id`, `name`, `description`, `price`, `type`, `image_thu
 (11, 'Macan GTS', 'High resolution multi purpose digital format image of the new Macan GTS', '299.00', 'digital', 'img/digital-macangts-tb.jpg', 'img/digital-macangts-hr.jpg', 1, 100, '2022-04-15 15:49:43', '2022-04-15 15:49:43'),
 (12, 'Boxster GTS', 'High resolution multi purpose digital format image of the new Boxster GTS.', '199.00', 'digital', 'img/digital-boxstergts-tb.jpg', 'img/digital-boxstergts-hr.jpg', 1, 100, '2022-04-15 15:49:43', '2022-04-15 15:49:43');
 
---
--- Indexes for dumped tables
+
+-- Indexes for dumped table
 --
 
 --
