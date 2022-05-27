@@ -1,6 +1,6 @@
 ![Car Enthusiast Art Repo](https://jhaydavis.me/aau/wnm608/img/hero-bg.jpg)
 # AAU WNM608 Project
-## Car Performance Art Repo
+## Car Enthusiast Art Repo
 
 This project was developed by Jhay Davis during the Spring Semester at AAU as part of the PHP Backend development class.
 
